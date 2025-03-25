@@ -16,7 +16,7 @@ export default function Home() {
       <div className="bg-background flex flex-col items-center mb-24 mt-32">
         <div className="gap-10 grid md:grid-cols-2 grid-cols-none px-5">
           <ProjectCard link="/projects/blenheim-staff-allocation" title="Blenheim Palace Staff Allocation" description="Developing a model to forecast visitor demand" buttonText="Read more" imageSrc="/images/BlenheimCard.jpg"/>
-          <ProjectCard link="/projects/consolidate-rebuild" title="Consolidate.org.uk Website Rebuild" description="Responsive UI for a political transparency non-profit" buttonText="Read more" />
+          <ProjectCard link="/projects/consolidate-ui-rebuild" title="Consolidate.org.uk Website Rebuild" description="Responsive UI for a political transparency non-profit" buttonText="Read more" />
         </div>
         
       </div>

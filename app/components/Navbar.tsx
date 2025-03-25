@@ -69,7 +69,6 @@ const Navbar = (props: Props) => {
               <li>
                 <Link
                   href="/"
-                  target="_blank"
                   aria-label="home"
                   className="font-inter text-xl text-foreground tracking-tighter"
                 >
