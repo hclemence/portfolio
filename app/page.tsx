@@ -18,7 +18,7 @@ export default function Home() {
             title="Blenheim Palace Digital Twin with the University of Oxford"
             description="A 3D simulation of the Palace for conservation planning and analysis "
             buttonText="Read more"
-            imageSrc="/images/BlenheimTwinCard.png"
+            imageSrc="/portfolio/images/BlenheimTwinCard.png"
           />
           <ProjectCard
             link="/projects/consolidate-ui-rebuild"
@@ -31,7 +31,7 @@ export default function Home() {
             title="Blenheim Palace Staff Allocation"
             description="Developing a model to forecast visitor demand"
             buttonText="Read more"
-            imageSrc="/images/BlenheimCard.jpg"
+            imageSrc="/portfolio/images/BlenheimCard.jpg"
           />
         </div>
       </div>

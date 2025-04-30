@@ -49,7 +49,7 @@ const HeaderSection = () => {
           <div className="flex justify-center md:justify-end">
             <div className="relative h-64 w-64 overflow-hidden rounded-full md:h-80 md:w-80">
               <Image
-                src="/images/profile.jpeg"
+                src="/portfolio/images/profile.jpeg"
                 alt="Harry Clemence"
                 fill
                 className="object-cover"

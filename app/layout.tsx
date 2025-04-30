@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   description: "Web Design and Data Science Portfolio",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "portfolio/favicon.ico" },
+      { url: "portfolio/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "portfolio/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "portfolio/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "portfolio/site.webmanifest",
 };
 
 export default function RootLayout({
