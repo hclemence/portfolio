@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import MenuOverlay from "./MenuOverlay";
+import MenuOverlay from "@/components/MenuOverlay";
 import { Menu } from "lucide-react";
-import LinkedIn from "../svg/linkedin.svg";
-import Github from "../svg/github.svg";
+import LinkedIn from "@/svg/linkedin.svg";
+import Github from "@/svg/github.svg";
 import { FileText } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { NavLinkType } from "@/types";
@@ -28,7 +28,6 @@ const navLinks: NavLinkType[] = [
 
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const [show, setShow] = useState(true);

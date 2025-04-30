@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { NavLinkType } from "../types";
+import { NavLinkType } from "@/types";
 
 const NavLink = ({ path, title, icon, mobileIconSize }: NavLinkType) => {
   return (

@@ -26,7 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     >
       {imageSrc && (
         <Image
-          fill={true}
+          fill
           src={imageSrc}
           alt="Blenheim Palace with flowers in the foreground"
           className="object-cover"

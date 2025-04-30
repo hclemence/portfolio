@@ -1,5 +1,5 @@
 import React from "react";
-import NavLink from "./NavLink";
+import NavLink from "@/components/NavLink";
 import { usePathname } from "next/navigation";
 import { X, Home, FileText } from "lucide-react";
 import { NavLinkType } from "@/types";

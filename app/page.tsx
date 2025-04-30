@@ -1,6 +1,6 @@
-import HeaderSection from "../components/HeaderSection";
-import Navbar from "../components/Navbar";
-import ProjectCard from "../components/ProjectCard";
+import HeaderSection from "@/components/HeaderSection";
+import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
