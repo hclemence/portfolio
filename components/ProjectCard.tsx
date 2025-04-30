@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           fill={true}
           src={imageSrc}
           alt="Blenheim Palace with flowers in the foreground"
-          objectFit="cover"
+          className="object-cover"
         />
       )}
       <div className="relative max-w-80 flex flex-col start">

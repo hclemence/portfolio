@@ -1,4 +1,4 @@
-import ProjectHeader from "@/app/components/ProjectHeader";
+import ProjectHeader from "@/components/ProjectHeader";
 import React from "react";
 import content from "@/data/blenheim-staff-allocation.json";
 
