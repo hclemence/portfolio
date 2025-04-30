@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectHeader from "@/app/components/ProjectHeader";
-import content from "./content.json";
+import content from "@/data/blenheim-digital-twin.json";
 
 const BlenheimDigitalTwinProject = () => {
   return (

@@ -1,6 +1,6 @@
-import content from "./content.json";
 import ProjectHeader from "@/app/components/ProjectHeader";
 import React from "react";
+import content from "@/data/blenheim-staff-allocation.json";
 
 const BlenheimProject = () => {
   return (
