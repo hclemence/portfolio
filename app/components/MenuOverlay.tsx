@@ -2,7 +2,7 @@ import React from "react";
 import NavLink from "./NavLink";
 import { usePathname } from "next/navigation";
 import { X, Home, FileText } from "lucide-react";
-import { NavLinkType } from "@/app/types";
+import { NavLinkType } from "@/types";
 
 interface MenuOverlayProps {
   links: NavLinkType[];

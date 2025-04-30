@@ -7,7 +7,7 @@ import LinkedIn from "../svg/linkedin.svg";
 import Github from "../svg/github.svg";
 import { FileText } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { NavLinkType } from "@/app/types";
+import { NavLinkType } from "@/types";
 
 const navLinks: NavLinkType[] = [
   {
