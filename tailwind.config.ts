@@ -14,6 +14,7 @@ const config: Config = {
   			background2: 'var(--background2)',
   			foreground: 'var(--foreground)',
   			foreground2: 'var(--foreground2)',
+				foreground3: 'var(--foreground3)',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -26,6 +27,11 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+				accent: {
+					DEFAULT: "#F0D4C8",
+					light: "#D9A08A",
+					foreground: "#A65A44",
+				},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
@@ -33,10 +39,6 @@ const config: Config = {
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
   			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
@@ -57,19 +59,10 @@ const config: Config = {
   			inter: [
   				'var(--font-inter)'
   			],
-  			maragsa: [
-  				'var(--font-maragsa)'
-  			],
-  			noto: [
-  				'var(--font-noto-serif)'
-  			],
 				editorial_new: [
 					'var(--font-editorial-new)'
 				]
   		},
-  		backgroundImage: {
-        'custom-radial': "radial-gradient(75% 75% at 50% 50%, rgba(255, 255, 255, 0) 39%, #fffdfa 60%, #fffdfa 99%), radial-gradient(75% 75% at 50% 50%, #FECE40 12%, #FA7081 76%, #fa709a 100%)"
-      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

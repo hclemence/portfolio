@@ -1,21 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import NavLink from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
 import { Menu } from "lucide-react";
 import LinkedIn from "../svg/linkedin.svg";
 import Github from "../svg/github.svg";
-import { Download } from "lucide-react";
+import { FileText } from "lucide-react";
 import { usePathname } from "next/navigation";
-
-interface NavLinkType {
-  title: string;
-  path: string;
-  icon?: JSX.Element;
-  desktopIconSize?: string;
-  mobileIconSize?: string;
-}
+import { NavLinkType } from "@/app/types";
 
 const navLinks: NavLinkType[] = [
   {
@@ -34,9 +26,7 @@ const navLinks: NavLinkType[] = [
   },
 ];
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const pathname = usePathname();
   console.log(pathname);
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -45,7 +35,7 @@ const Navbar = (props: Props) => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const controlNavbar = () => {
-    setShow(window.scrollY < lastScrollY);
+    setShow(window.scrollY < lastScrollY || window.scrollY < 10);
     setLastScrollY(window.scrollY);
   };
 
@@ -70,7 +60,7 @@ const Navbar = (props: Props) => {
                 <Link
                   href="/"
                   aria-label="home"
-                  className="font-inter text-xl text-foreground tracking-tighter"
+                  className="font-inter font-semibold text-xl text-accent-foreground hover:text-accent-foreground/75 transition-colors tracking-tighter"
                 >
                   Harry Clemence
                 </Link>
@@ -85,19 +75,21 @@ const Navbar = (props: Props) => {
                     href={link.path}
                     target="_blank"
                     aria-label={link.title}
-                    className="flex font-inter text-foreground2 items-center hover:text-foreground"
+                    className="flex font-inter text-foreground2 items-center hover:text-foreground3"
                   >
-                    <span className={link.desktopIconSize} >{link.icon}</span>
+                    <span className={link.desktopIconSize}>{link.icon}</span>
                   </Link>
                 </li>
               ))}
               <li>
                 <a
                   href="/files/Harry-Clemence-CV.pdf"
-                  download
-                  className="font-inter bg-foreground2 hover:bg-foreground inline-flex text-background items-center tracking-tighter rounded-3xl text-base px-4 py-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-inter bg-foreground2 hover:bg-foreground3 inline-flex items-center justify-center text-background px-4 py-2 rounded-md text-sm font-medium tracking-tight transition-colors"
                 >
-                  CV <Download className=" ml-3 h-[18px] w-[18px] inline" />{" "}
+                  <FileText className="mr-2 h-4 w-4" />
+                  <span>View CV</span>
                 </a>
               </li>
             </div>
@@ -105,7 +97,7 @@ const Navbar = (props: Props) => {
           <div className="flex sm:hidden">
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center p-4 text-foreground2 hover:text-foreground "
+              className="flex items-center mt-4 text-foreground2 hover:text-foreground3 "
             >
               <Menu className="h-7 w-7" />
             </button>
@@ -118,7 +110,14 @@ const Navbar = (props: Props) => {
           className="fixed top-0 left-0 h-screen w-screen bg-black opacity-80 z-40"
         />
       )}
-      {navbarOpen ? <MenuOverlay links={navLinks} closeOverlayFn={()=>{setNavbarOpen(false)}} /> : null}
+      {navbarOpen ? (
+        <MenuOverlay
+          links={navLinks}
+          closeOverlayFn={() => {
+            setNavbarOpen(false);
+          }}
+        />
+      ) : null}
     </div>
   );
 };

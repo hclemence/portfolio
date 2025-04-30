@@ -1,36 +1,78 @@
 import React from "react";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 type Props = {};
 
-const HeaderSection = (props: Props) => {
+const HeaderSection = () => {
   return (
-    <div className="flex flex-col">
-      {/* <div className='bg-custom-radial  w-[500px] h-[500px]  bottom-14 -right-16 absolute bg-cover'></div> */}
-      <div className="flex items-center gap-x-4">
-        <h1 className="text-left font-editorial_new text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-regular text-foreground">
-          Harry Clemence
-        </h1>
-        <Image
-          src="/images/profile.jpeg"
-          alt="Blenheim Palace with flowers in the foreground"
-          width={300}
-          height={300}
-          className="rounded-full w-[300px] h-[300px] mr-32 mb-12"
-        />
+    <section className="w-full">
+      <div className="container px-4 md:px-6">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
+          {/* Content */}
+          <div className="flex flex-col space-y-6">
+            {/* Name */}
+            <h1 className="text-5xl font-editorial_new tracking-tight text-[#2D2A26] sm:text-6xl md:text-7xl">
+              Harry
+              <br />
+              Clemence
+            </h1>
+
+            {/* Standalone skill bubbles */}
+            <div className="flex flex-wrap gap-2 py-1">
+              <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-sm text-accent-foreground">
+                Full-stack Developer
+              </span>
+              <span className="inline-flex items-center rounded-full bg-accent px-3 py-1 text-sm text-accent-foreground">
+                Data Scientist
+              </span>
+            </div>
+
+            {/* Bio text */}
+            <div className="space-y-4 pt-2">
+              <p className="text-[#4A4640]">
+                Hi, I'm based in Birmingham, UK. With five years of experience
+                in <span className="font-medium text-foreground">React</span>{" "}
+                and{" "}
+                <span className="font-medium text-foreground">JavaScript</span>,
+                I love building creative solutions that make a difference.
+              </p>
+
+              <p className="text-[#4A4640]">
+                I'm currently looking for work where I can apply my skills to{" "}
+                <span className="font-medium text-foreground">meaningful</span>{" "}
+                projects.{" "}
+                <span className="font-medium ">Feel free to contact me!</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Image */}
+          <div className="flex justify-center md:justify-end">
+            <div className="relative h-64 w-64 overflow-hidden rounded-full md:h-80 md:w-80">
+              <Image
+                src="/images/profile.jpeg"
+                alt="Harry Clemence"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <h2 className="relative font-inter text-foreground2 text-base sm:text-lg lg:text-xl mt-11">
-        Hi, I'm a <span className="text-foreground">front-end developer</span>{" "}
-        and <span className="text-foreground">data scientist</span> based in{" "}
-        <span className="text-foreground">Birmingham, UK</span>. With five years
-        of experience in <span className="text-foreground">React</span> and
-        strong <span className="text-foreground">Python</span> skills, I love
-        building creative solutions that make a difference. I'm currently
-        looking for work where I can apply my skills to{" "}
-        <span className="text-foreground">meaningful</span> projects.{" "}
-        <span className="text-foreground">Feel free to contact me!</span>
-      </h2>
-    </div>
+
+      {/* Scroll Down Row */}
+      <div className="flex justify-center items-center pt-16">
+        <div className="flex flex-col items-center mt-2">
+          <ChevronDown className="h-5 w-5 animate-bounce text-accent-foreground" />
+          <ChevronDown className="h-5 w-5 -mt-3 animate-bounce text-accent-foreground opacity-70" />
+        </div>
+        <span className="text-sm font-medium text-[#4A4640] ml-2">
+          Scroll down to view projects
+        </span>
+      </div>
+    </section>
   );
 };
 

@@ -1,14 +1,14 @@
 import React from "react";
 import ProjectHeader from "@/app/components/ProjectHeader";
 import content from "./content.json";
+import { Blend } from "lucide-react";
 
-const ConsolidateProject = () => {
+const BlenheimDigitalTwinProject = () => {
   return (
     <div className="py-32">
       <ProjectHeader
-        title="Consolidate UI Re-Build"
+        title="Blenheim Digital Twin Project with the University of Oxford"
         skills={content.skills}
-        link="https://consolidate.org.uk"
       />
       <div className="gap-4 md:gap-10 grid md:grid-cols-[2fr_5fr] grid-cols-none text-left mt-6 sm:mt-10 lg:mt-20 xl:mt-36">
         <h3 className="text-foreground text-xl">What?</h3>
@@ -24,4 +24,4 @@ const ConsolidateProject = () => {
   );
 };
 
-export default ConsolidateProject;
+export default BlenheimDigitalTwinProject;
