@@ -3,28 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import MenuOverlay from "@/components/MenuOverlay";
 import { Menu } from "lucide-react";
-import LinkedIn from "@/svg/linkedin.svg";
-import Github from "@/svg/github.svg";
 import { FileText } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { NavLinkType } from "@/types";
-
-const navLinks: NavLinkType[] = [
-  {
-    title: "LinkedIn",
-    path: "https://www.linkedin.com/in/harry-clemence-2360ab229/",
-    icon: <LinkedIn className="inline " />,
-    desktopIconSize: "[&_svg]:h-7 [&_svg]:w-7",
-    mobileIconSize: "[&_svg]:h-6 [&_svg]:w-6",
-  },
-  {
-    title: "Github",
-    path: "https://github.com/hclemence",
-    icon: <Github className="inline" />,
-    desktopIconSize: "[&_svg]:h-8 [&_svg]:w-8",
-    mobileIconSize: "[&_svg]:h-7 [&_svg]:w-7",
-  },
-];
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -81,18 +61,26 @@ const Navbar = () => {
               <div />
             )}
             <div className="flex items-center sm:space-x-8">
-              {navLinks.map((link, index) => (
-                <li key={index}>
+                <li >
                   <Link
-                    href={link.path}
+                    href="https://www.linkedin.com/in/harry-clemence-2360ab229/"
                     target="_blank"
-                    aria-label={link.title}
+                    aria-label="LinkedIn"
                     className="flex font-inter text-foreground2 items-center hover:text-foreground3"
                   >
-                    <span className={link.desktopIconSize}>{link.icon}</span>
+                    <span>LinkedIn</span>
                   </Link>
                 </li>
-              ))}
+                <li >
+                  <Link
+                    href="https://github.com/hclemence"
+                    target="_blank"
+                    aria-label="Github"
+                    className="flex font-inter text-foreground2 items-center hover:text-foreground3"
+                  >
+                    <span>Github</span>
+                  </Link>
+                </li>
               <li>
                 <a
                   href="/files/Harry-Clemence-CV.pdf"
@@ -124,7 +112,6 @@ const Navbar = () => {
       )}
       {navbarOpen ? (
         <MenuOverlay
-          links={navLinks}
           closeOverlayFn={() => {
             setNavbarOpen(false);
           }}

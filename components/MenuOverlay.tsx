@@ -1,15 +1,13 @@
 import React from "react";
 import NavLink from "@/components/NavLink";
 import { usePathname } from "next/navigation";
-import { X, Home, FileText } from "lucide-react";
-import { NavLinkType } from "@/types";
+import { X, Home } from "lucide-react";
 
 interface MenuOverlayProps {
-  links: NavLinkType[];
   closeOverlayFn: () => void;
 }
 
-const MenuOverlay = ({ links, closeOverlayFn }: MenuOverlayProps) => {
+const MenuOverlay = ({ closeOverlayFn }: MenuOverlayProps) => {
   const pathname = usePathname();
   console.log(pathname);
   return (
@@ -31,16 +29,15 @@ const MenuOverlay = ({ links, closeOverlayFn }: MenuOverlayProps) => {
             />
           </li>
         )}
-        {links.map((link, index) => (
-          <li key={index}>
-            <NavLink
-              path={link.path}
-              title={link.title}
-              icon={link.icon}
-              mobileIconSize={link.mobileIconSize}
-            />
-          </li>
-        ))}
+        <li>
+          <NavLink
+            path="https://www.linkedin.com/in/harry-clemence-2360ab229/"
+            title="LinkedIn"
+          />
+        </li>
+        <li>
+          <NavLink path="https://github.com/hclemence" title="Github" />
+        </li>
         <li>
           <a
             href="/files/Harry-Clemence-CV.pdf"
@@ -48,7 +45,6 @@ const MenuOverlay = ({ links, closeOverlayFn }: MenuOverlayProps) => {
             rel="noopener noreferrer"
             className="flex items-center py-2 pl-3 pr-4 text-base md:p-0 text-foreground2 hover:text-foreground"
           >
-            <FileText className="mr-3 h-6 w-6" />
             <span>View CV</span>
           </a>{" "}
         </li>
