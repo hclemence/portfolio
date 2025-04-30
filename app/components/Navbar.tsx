@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import MenuOverlay from "./MenuOverlay";
 import { Menu } from "lucide-react";
@@ -12,15 +12,15 @@ import { NavLinkType } from "@/app/types";
 const navLinks: NavLinkType[] = [
   {
     title: "LinkedIn",
-    path: "https://www.linkedin.com/in/harry-clemence-2360ab229/", // External URL
-    icon: <LinkedIn className="inline " />, // LinkedIn icon
+    path: "https://www.linkedin.com/in/harry-clemence-2360ab229/",
+    icon: <LinkedIn className="inline " />,
     desktopIconSize: "[&_svg]:h-7 [&_svg]:w-7",
     mobileIconSize: "[&_svg]:h-6 [&_svg]:w-6",
   },
   {
     title: "Github",
-    path: "https://github.com/hclemence", // External URL
-    icon: <Github className="inline" />, // GitHub icon
+    path: "https://github.com/hclemence",
+    icon: <Github className="inline" />,
     desktopIconSize: "[&_svg]:h-8 [&_svg]:w-8",
     mobileIconSize: "[&_svg]:h-7 [&_svg]:w-7",
   },
@@ -32,20 +32,32 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const prevScrollY = useRef(0);
 
   const controlNavbar = () => {
-    setShow(window.scrollY < lastScrollY || window.scrollY < 10);
-    setLastScrollY(window.scrollY);
+    const currentScrollY = window.scrollY;
+
+    // Show navbar if user is scrolling up or at the top of the page
+    if (currentScrollY < 10 || currentScrollY < prevScrollY.current) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+
+    prevScrollY.current = currentScrollY;
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
+    const handleScroll = () => {
+      controlNavbar();
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY, controlNavbar]);
+  }, []);
 
   return (
     <div>
