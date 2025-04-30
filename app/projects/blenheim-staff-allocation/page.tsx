@@ -1,8 +1,5 @@
-import Navbar from "@/app/components/Navbar";
-import Image from "next/image";
 import content from "./content.json";
 import ProjectHeader from "@/app/components/ProjectHeader";
-
 import React from "react";
 
 const BlenheimProject = () => {

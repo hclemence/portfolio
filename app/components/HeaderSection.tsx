@@ -2,8 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 
-type Props = {};
-
 const HeaderSection = () => {
   return (
     <section className="w-full">
@@ -31,7 +29,7 @@ const HeaderSection = () => {
             {/* Bio text */}
             <div className="space-y-4 pt-2">
               <p className="text-[#4A4640]">
-                Hi, I'm based in Birmingham, UK. With five years of experience
+                Hi, I&apos;m based in Birmingham, UK. With five years of experience
                 in <span className="font-medium text-foreground">React</span>{" "}
                 and{" "}
                 <span className="font-medium text-foreground">JavaScript</span>,
@@ -39,7 +37,7 @@ const HeaderSection = () => {
               </p>
 
               <p className="text-[#4A4640]">
-                I'm currently looking for work where I can apply my skills to{" "}
+                I&apos;m currently looking for work where I can apply my skills to{" "}
                 <span className="font-medium text-foreground">meaningful</span>{" "}
                 projects.{" "}
                 <span className="font-medium ">Feel free to contact me!</span>

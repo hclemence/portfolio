@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import clsx from "clsx";
 import { Globe } from "lucide-react";
 
 const ProjectHeader = ({

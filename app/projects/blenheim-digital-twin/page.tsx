@@ -1,7 +1,6 @@
 import React from "react";
 import ProjectHeader from "@/app/components/ProjectHeader";
 import content from "./content.json";
-import { Blend } from "lucide-react";
 
 const BlenheimDigitalTwinProject = () => {
   return (
