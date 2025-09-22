@@ -58,7 +58,7 @@ const BlenheimDigitalTwinProject = () => {
             <h4 className="text-xl">Survey Reporting Workflow</h4>
             <p className="text-foreground2">
               I developed a form component that is populated by tables from the
-              digital twin's database. This allows administrators to customise
+              digital twin&#39;s database. This allows administrators to customise
               form fields and even create new survey forms as needed. On
               submission of a survey, the data is stored in the database and
               linked to the relevant part of the 3D model. This enables
@@ -100,7 +100,7 @@ const BlenheimDigitalTwinProject = () => {
           The Blenheim Digital Twin application is a fully operational enterprise
           web app, currently in active use at Blenheim Palace for logging and
           managing maintenance activities. The platform has streamlined
-          conservation workflows and improved data accessibility for the estate’s
+          conservation workflows and improved data accessibility for the estate&#39;s
           team.
           <br />
           <br />
