@@ -52,7 +52,7 @@ const Navbar = () => {
                 <Link
                   href="/"
                   aria-label="home"
-                  className="font-inter font-semibold text-xl text-accent-foreground hover:text-accent-foreground/75 transition-colors tracking-tighter"
+                  className="font-inter text-xl text-accent-foreground hover:text-accent-foreground/75 transition-colors tracking-tighter"
                 >
                   Harry Clemence
                 </Link>
@@ -61,29 +61,29 @@ const Navbar = () => {
               <div />
             )}
             <div className="flex items-center sm:space-x-8">
-                <li >
-                  <Link
-                    href="https://www.linkedin.com/in/harry-clemence-2360ab229/"
-                    target="_blank"
-                    aria-label="LinkedIn"
-                    className="flex font-inter text-foreground2 items-center hover:text-foreground3"
-                  >
-                    <span>LinkedIn</span>
-                  </Link>
-                </li>
-                <li >
-                  <Link
-                    href="https://github.com/hclemence"
-                    target="_blank"
-                    aria-label="Github"
-                    className="flex font-inter text-foreground2 items-center hover:text-foreground3"
-                  >
-                    <span>Github</span>
-                  </Link>
-                </li>
+              <li>
+                <Link
+                  href="https://www.linkedin.com/in/harry-clemence-2360ab229/"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                  className="flex font-inter text-foreground2 items-center hover:text-foreground3"
+                >
+                  <span>LinkedIn</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://github.com/hclemence"
+                  target="_blank"
+                  aria-label="Github"
+                  className="flex font-inter text-foreground2 items-center hover:text-foreground3"
+                >
+                  <span>Github</span>
+                </Link>
+              </li>
               <li>
                 <a
-                  href="/files/Harry-Clemence-CV.pdf"
+                  href="/portfolio/files/Harry-Clemence-CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-inter bg-foreground2 hover:bg-foreground3 inline-flex items-center justify-center text-background px-4 py-2 rounded-md text-sm font-medium tracking-tight transition-colors"
@@ -94,10 +94,10 @@ const Navbar = () => {
               </li>
             </div>
           </ul>
-          <div className="flex sm:hidden">
+          <div className="flex sm:hidden py-4">
             <button
               onClick={() => setNavbarOpen(true)}
-              className="flex items-center mt-4 text-foreground2 hover:text-foreground3 "
+              className="flex items-center text-foreground2 hover:text-foreground3 "
             >
               <Menu className="h-7 w-7" />
             </button>
@@ -106,17 +106,16 @@ const Navbar = () => {
       </nav>
       {navbarOpen && (
         <div
-          onClick={() => setNavbarOpen(false)} // Close the menu when clicking the background
-          className="fixed top-0 left-0 h-screen w-screen bg-black opacity-80 z-40"
-        />
+        onClick={() => setNavbarOpen(false)}
+        className={`fixed top-0 left-0 h-screen w-screen bg-black z-40 transition-opacity duration-300 ${
+          navbarOpen ? "opacity-60 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      />
       )}
-      {navbarOpen ? (
-        <MenuOverlay
-          closeOverlayFn={() => {
-            setNavbarOpen(false);
-          }}
-        />
-      ) : null}
+      <MenuOverlay
+        isOpen={navbarOpen}
+        closeOverlayFn={() => setNavbarOpen(false)}
+      />
     </div>
   );
 };

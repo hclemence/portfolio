@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 const HeaderSection = () => {
   return (
     <section className="w-full">
-      <div className="container px-4 md:px-6">
+      <div className="container">
         <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12">
           {/* Content */}
           <div className="flex flex-col space-y-6">
