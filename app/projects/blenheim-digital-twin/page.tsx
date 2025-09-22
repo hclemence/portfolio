@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import ProjectHeader from "@/components/ProjectHeader";
 import content from "@/data/blenheim-digital-twin.json";
 
@@ -20,10 +21,14 @@ const BlenheimDigitalTwinProject = () => {
       <div className="bg-background2 rounded-lg p-6 flex flex-col gap-10 mb-10">
         <div className="flex flex-col gap-6">
           <h3 className="text-foreground text-xl">UI Design</h3>
-          <img
+          <Image
             src="/portfolio/images/BlenheimTwinSurvey.png"
             alt="Blenheim Palace Digital Twin"
             className="w-full h-auto rounded-lg"
+            width={1200}
+            height={700}
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
           <p className="text-foreground2">
             The interface prioritises clarity and functionality for conservation
@@ -68,12 +73,15 @@ const BlenheimDigitalTwinProject = () => {
           <h4 className="text-foreground text-xl">
             Playback and Analysis Tools
           </h4>
-          <img
+          <Image
             src="/portfolio/images/BlenheimTwinPlayback.png"
             alt="Playback and Analysis Tools Interface"
             className="w-full h-auto rounded-lg"
+            width={1200}
+            height={700}
+            sizes="(max-width: 768px) 100vw, 800px"
+            priority
           />
-
           <p className="text-foreground2 leading-relaxed">
             I also built tools to interact with time-series data linked to the
             digital twin. This includes a playback feature that allows users to
